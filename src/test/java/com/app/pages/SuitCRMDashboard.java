@@ -3,7 +3,6 @@ package com.app.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -13,11 +12,9 @@ import com.app.utilities.BrowserUtils;
 import com.app.utilities.Driver;
 
 public class SuitCRMDashboard {
-	private WebDriver driver;
 
 	public SuitCRMDashboard() {
-		this.driver = Driver.getDriver();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(Driver.getDriver(), this);
 	}
 
 	@FindBy(css = ".topnav>span>a")
@@ -77,11 +74,11 @@ public class SuitCRMDashboard {
 	}
 
 	public void openContact(String contactName) {
-		driver.findElement(By.xpath("(//a[contains(text(),'" + contactName + "')])[1]")).click();
+		Driver.getDriver().findElement(By.xpath("(//a[contains(text(),'" + contactName + "')])[1]")).click();
 	}
 
 	public void createContact() {
-		Actions action = new Actions(driver);
+		Actions action = new Actions(Driver.getDriver());
 		action.moveToElement(createMenu).perform();
 		BrowserUtils.waitForVisibility(createContactLink, 3);
 		createContactLink.click();
@@ -89,7 +86,7 @@ public class SuitCRMDashboard {
 	}
 
 	public boolean verifyPostDisplayed(String value) {
-		return driver.findElement(By.xpath("//div[contains(text(),'" + value + "')]")).isDisplayed();
+		return Driver.getDriver().findElement(By.xpath("//div[contains(text(),'" + value + "')]")).isDisplayed();
 	}
 
 	public void post(String value) {
@@ -108,7 +105,7 @@ public class SuitCRMDashboard {
 	}
 
 	public void logout() {
-		Actions action = new Actions(driver);
+		Actions action = new Actions(Driver.getDriver());
 		action.moveToElement(profileMenu).perform();
 		BrowserUtils.waitForVisibility(logoutlink, 5);
 		logoutlink.click();
@@ -117,7 +114,7 @@ public class SuitCRMDashboard {
 	public List<WebElement> topMenuOptions(String name) {
 		// sales marketing support activities
 		String xpath = "//a[.='" + name + "']/..//li/a";
-		return driver.findElements(By.xpath(xpath));
+		return Driver.getDriver().findElements(By.xpath(xpath));
 
 	}
 

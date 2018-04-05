@@ -1,6 +1,5 @@
 package com.app.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,10 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.app.utilities.Driver;
 
 public class SuitCRMLoginPage {
-   private WebDriver driver;
    public SuitCRMLoginPage() {
-	   this.driver = Driver.getDriver();
-	   PageFactory.initElements(driver, this);
+	   PageFactory.initElements(Driver.getDriver(), this);
    }
    
    @FindBy(id = "user_name")

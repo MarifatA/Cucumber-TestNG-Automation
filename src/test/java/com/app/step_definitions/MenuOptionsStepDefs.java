@@ -15,7 +15,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class MenuOptionsStepDefs {
-	WebDriver driver = Driver.getDriver();
 	SuitCRMDashboard dashboard = new SuitCRMDashboard();
 
 	@When("^I hover over the (Collaboration|Sales|Marketing|Support|Activities|All) menu$")

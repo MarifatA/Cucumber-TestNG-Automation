@@ -3,7 +3,6 @@ package com.app.pages;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,10 +11,8 @@ import org.openqa.selenium.support.ui.Select;
 import com.app.utilities.Driver;
 
 public class SuitCRMTasks {
-   private WebDriver driver;
    public SuitCRMTasks() {
-	   driver = Driver.getDriver();
-	   PageFactory.initElements(driver, this);
+	   PageFactory.initElements(Driver.getDriver(), this);
    }
    LocalDate date = LocalDate.now();
    DateTimeFormatter custom = DateTimeFormatter.ofPattern("MM/dd/yyyy");

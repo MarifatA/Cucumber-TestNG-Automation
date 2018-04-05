@@ -15,7 +15,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 public class UITestsStepDefs {
-	private WebDriver driver = Driver.getDriver();
 	SuitCRMLoginPage loginPage = new SuitCRMLoginPage();
 	SuitCRMDashboard dashboard = new SuitCRMDashboard();
 	SuitCRMCreateContactsPage contactsPage = new SuitCRMCreateContactsPage();
@@ -23,13 +22,13 @@ public class UITestsStepDefs {
 	@Given("^I logged in into suiteCRM$")
 	public void i_logged_in_into_suiteCRM() {
 		System.out.println("Logging to CRM");
-		driver.get(ConfigurationReader.getProperty("url"));
+		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 		loginPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
 	}
 
 	@Then("^CRM name should be SuiteCRM$")
 	public void crm_name_should_be_SuiteCRM() {
-		assertTrue(driver.getTitle().endsWith("SuiteCRM"));
+		assertTrue(Driver.getDriver().getTitle().endsWith("SuiteCRM"));
 	}
 
 	@Then("^Moduls should be displayed$")

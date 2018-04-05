@@ -14,11 +14,9 @@ import org.openqa.selenium.support.PageFactory;
 import com.app.utilities.Driver;
 
 public class SuitCRMCreateContactsPage {
-	private WebDriver driver;
 
 	public SuitCRMCreateContactsPage() {
-		driver = Driver.getDriver();
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(Driver.getDriver(), this);
 	}
 
 	@FindBy(id = "first_name")
@@ -76,7 +74,7 @@ public class SuitCRMCreateContactsPage {
 	public WebElement viewContacts;
 
 	public int getNumberOfContacts(String contactName) {
-		List<WebElement> contacts = driver.findElements(By.xpath("//a[contains(text(),'John Doe')]"));
+		List<WebElement> contacts = Driver.getDriver().findElements(By.xpath("//a[contains(text(),'John Doe')]"));
 		return contacts.size();
 	}
 
@@ -84,11 +82,11 @@ public class SuitCRMCreateContactsPage {
 		actions.click();
 		findDuplicatesLink.click();
 		nextStepButton.click();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 		js.executeScript("arguments[0].click();", selectAll);
 		performMerge.click();
 		saveMerge.click();
-		Alert alert = driver.switchTo().alert();
+		Alert alert = Driver.getDriver().switchTo().alert();
 		alert.accept();
 	}
 
