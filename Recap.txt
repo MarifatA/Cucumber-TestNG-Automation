@@ -1,0 +1,34 @@
+Recap:
+    Hooks class: @Before, @After
+        Cucumber annotations 
+    
+    Own annotations: 
+        tags -> We can put tags on Feature file 
+             -> On specific scenario 
+             @SuiteCRMSmoke
+             
+             
+   Taking screenshots using Selenium Webdriver
+   getScreenshotAs
+   
+   WebDriver driver = new ChromeDriver();
+   
+   public class ChromeDriver implements WebDriver, TakesScreenShot{
+   
+   }
+   
+   thats why we need to cast it 
+   
+   File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+   String screenshotBase64 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+   
+   POJO-Plain Old Java Object
+   
+   NOTE: The roles, objects,products... That we have in our application can be represent bean class
+   ex:
+   Student{
+   firstName;
+   lastName;
+   getFirstName()
+   getLastName()
+   
