@@ -51,12 +51,12 @@ public class SuitCRMTasks {
    
    public String setStartDateToday() {
 	   startDate.sendKeys(custom.format(date).toString());
-	   return custom.format(date).toString().trim();
+	   return custom.format(date).toString();
    }
    public String setEndDateFiveDaysAfterStartingDate(int days) {
 	   date = date.plusDays(days);
 	   endDate.sendKeys(custom.format(date).toString());
-	   return custom.format(date).toString().trim();
+	   return custom.format(date).toString();
    }
    
   
