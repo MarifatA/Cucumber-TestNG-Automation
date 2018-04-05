@@ -15,7 +15,7 @@ public class SuitCRMTasks {
 	   PageFactory.initElements(Driver.getDriver(), this);
    }
    LocalDate date = LocalDate.now();
-   DateTimeFormatter custom = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+   DateTimeFormatter custom = DateTimeFormatter.ofPattern("yyyy/MM/dd");
    
    @FindBy(id = "name")
    public WebElement subjectBox;
@@ -51,12 +51,12 @@ public class SuitCRMTasks {
    
    public String setStartDateToday() {
 	   startDate.sendKeys(custom.format(date).toString());
-	   return custom.format(date).toString();
+	   return custom.format(date).toString().split(" ")[0];
    }
    public String setEndDateFiveDaysAfterStartingDate(int days) {
 	   date = date.plusDays(days);
 	   endDate.sendKeys(custom.format(date).toString());
-	   return custom.format(date).toString();
+	   return custom.format(date).toString().split(" ")[0];
    }
    
   
