@@ -4,12 +4,10 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.List;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.app.pages.SuitCRMDashboard;
 import com.app.utilities.BrowserUtils;
-import com.app.utilities.Driver;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
