@@ -64,7 +64,7 @@ public class JDBCConnection {
 		// DataBase MetaData
 		DatabaseMetaData dbMetaData = connection.getMetaData();
 		System.out.println("User: " + dbMetaData.getUserName());
-		System.out.println("Database Type: " + dbMetaData.getDatabaseProductName()+dbMetaData.getSchemaTerm());
+		System.out.println("Database Type: " + dbMetaData.getDatabaseProductName() + dbMetaData.getSchemaTerm());
 
 		// resultSet MetaData
 		ResultSetMetaData rsMetadata = resultSet.getMetaData();
@@ -78,7 +78,7 @@ public class JDBCConnection {
 
 		// Throw resultSet into a List of Maps
 		// create a List of Maps
-		
+
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		ResultSetMetaData rsMdata = resultSet.getMetaData();
 		int colCount = rsMdata.getColumnCount();
@@ -90,19 +90,15 @@ public class JDBCConnection {
 			}
 			list.add(rowMap);
 		}
-		
+
 		// print all employee_id from list of maps
 		for (Map<String, Object> map : list) {
 			System.out.println(map.get("EMPLOYEE_ID"));
 		}
-		
-		
-		
+
 		resultSet.close();
 		statement.close();
 		connection.close();
 	}
-	
-	
 
 }
