@@ -18,7 +18,7 @@ public class SuitCRMTasks {
 	LocalDate date = LocalDate.now();
 	DateTimeFormatter custom = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-	@FindBy(id = "name")
+	@FindBy(xpath="//input[@id='name']")
 	public WebElement subjectBox;
 
 	@FindBy(id = "status")

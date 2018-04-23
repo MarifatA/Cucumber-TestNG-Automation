@@ -3,8 +3,6 @@ package com.app.step_definitions;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import org.openqa.selenium.WebDriver;
-
 import com.app.pages.SuitCRMCreateContactsPage;
 import com.app.pages.SuitCRMDashboard;
 import com.app.pages.SuitCRMLoginPage;

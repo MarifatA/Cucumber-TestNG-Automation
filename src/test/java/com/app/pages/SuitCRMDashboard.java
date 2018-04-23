@@ -54,7 +54,7 @@ public class SuitCRMDashboard {
 	public WebElement collaboration;
 
 	@FindBy(xpath = "//*[@id=\"grouptab_2\"]")
-	public WebElement support;
+	public WebElement suppoert;
 
 	@FindBy(xpath = "//*[@id=\"grouptab_0\"]")
 	public WebElement sales;
